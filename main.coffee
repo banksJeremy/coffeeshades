@@ -32,9 +32,12 @@ jQuery ->
             result = (make "<span class=literal>").text String node.value
         
         else if node instanceof NT.Value
-            result = sourceToDOM node.base
-
-            # + properties
+            result = (make "<span class=value>")
+            
+            result.append (make "<span class=base>").append sourceToDOM node.base
+            
+            for property in node.properties
+                result.append (make "<span class=property>").append sourceToDOM property
        
         else if node instanceof NT.Code
             result = make "<span class=code>"
@@ -57,6 +60,21 @@ jQuery ->
             result.append (make "<span class=operand>").append sourceToDOM node.first
             result.append (make "<span class=operator>").text node.operator
             result.append (make "<span class=operand>").append sourceToDOM node.second
+        
+        else if node instanceof NT.Call
+            result = make "<span class=call>"
+
+            result.append (make "<span class=callee>").append sourceToDOM node.variable
+            
+            args = make "<span class=args>"
+
+            for arg in node.args
+                args.append (make "<span class=arg>").append sourceToDOM arg
+            
+            result.append args
+        
+        else if node instanceof NT.Access
+            result = sourceToDOM node.name
 
         else
             result = (make "<span class=unknown>").text "[Unsupported Node #{node.constructor.name}]"
@@ -67,9 +85,12 @@ jQuery ->
 
     display = make "<pre class=source>"
 
-    source = "f = (x) -> 2 * x\nconsole.log f 9\ny = 2" # use localStorage.source ?= later
+    source = "f = (x, y) -> 2 * x + z\nconsole.log f 9, 10\nz = 2" # use localStorage.source ?= later
     
     ((make "<h1>").text document.title).appendTo find "body"           
     display.append sourceToDOM CoffeeScript.nodes source
     display.appendTo find "body"
+    
+    sourceOut = (make "<textarea>").text CoffeeScript.nodes(source).compile()
+    (find "body").append sourceOut
 
