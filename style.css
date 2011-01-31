@@ -1,0 +1,44 @@
+body {
+    font-family: Georgia, sans-serif;
+}
+
+h1 {
+    font-size: 150%;
+}
+
+.source {
+    padding: .5em;
+    margin: .5em;
+    overflow: auto;
+    border-radius: 1em;
+    border: 1px solid #888;
+    background: #EEE;
+}
+
+.source .expression {
+    clear: both;
+}
+
+.source .expressions {
+    position: relative;
+    padding: .25em;
+    border: 1px solid black;
+    border-radius: .5em;
+}
+
+.source .operator {
+    font-weight: bold;
+    color: blue;
+    margin: 0 .5em;
+}
+
+.source .literal {
+    color: red;
+}
+
+.source .params {
+    background: rgba(0, 255, 0, .5);
+    padding: .125em;
+    border-radius: .25em; 
+}
+
