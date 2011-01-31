@@ -1,0 +1,9 @@
+First goal: convert entire CoffeeScript source tree to DOM tree. Ideally use jQuery data to actually link the
+corresponding elements.
+
+Second goal: come up with a nice visual way to represent the source without falling back to just text, where possible.
+
+Later on: turn this into an editor. you should be able to make things more efficient, working on the source tree instead of raw text. Lispies sort-of get this with a good editor, but I haven't seen (nor looked for) something like this before.
+
+It might be necessary to restrict the language in some ways to make this work... CoffeeScript is so flexible that coming up with a nice visual representation that can contain as much information as the text would be difficult. Or perhaps we would just optimize for restricted usage, but always have a mostly-plain-text fallback.
+
