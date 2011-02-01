@@ -32,9 +32,12 @@ h1 {
     color: black;
 }
 
-.output.error {
-    border-color: red;
+.error .output {
     background-color: #FEE;
+}
+
+.error .display {
+    background: #300;
 }
 
 .display {
@@ -46,6 +49,7 @@ h1 {
     .display .args,
     .display .call,
     .display .literal,
+    .display .code,
     .display .assign {
         display: inline-block;
         padding: .25em;
@@ -61,6 +65,17 @@ h1 {
     
     .display .args {
         background: rgb(255, 255, 128);
+        color: black;
+    }
+    
+    .display .code {
+        border: 1px solid;
+        background: #333;
+        color: white;
+    }
+    
+    .display .assign {
+        background: rgb(128, 190, 255);
         color: black;
     }
     
