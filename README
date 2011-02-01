@@ -1,9 +1,24 @@
-First goal: convert entire CoffeeScript source tree to DOM tree. Ideally use jQuery data to actually link the
-corresponding elements.
+CoffeeShades
+============
 
-Second goal: come up with a nice visual way to represent the source without falling back to just text, where possible.
+I'm experimenting with more visual representations of source code. I may decide to make an editor out of this if all goes well.
 
-Later on: turn this into an editor. you should be able to make things more efficient, working on the source tree instead of raw text. Lispies sort-of get this with a good editor, but I haven't seen (nor looked for) something like this before.
+This is in HTML5, primarily targeting Google Chrome.
 
-It might be necessary to restrict the language in some ways to make this work... CoffeeScript is so flexible that coming up with a nice visual representation that can contain as much information as the text would be difficult. Or perhaps we would just optimize for restricted usage, but always have a mostly-plain-text fallback.
+First target: Decent visualization of a narrow subset of CoffeeScript.
+- Functions, but no splats or defaults.
+- Calls, but no splats.
+- Arithmatic.
+- No properties or methods.
 
+
+
+jQuery:
+    Copyright (c) 2011 John Resig
+    http://jquery.com/
+
+CoffeeScript:
+    Copyright (c) 2011 Jeremy Ashkenas
+    http://coffeescript.org/
+
+Both are used under the terms of the MIT license.

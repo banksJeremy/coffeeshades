@@ -1,68 +1,83 @@
 body {
     font-family: Georgia, sans-serif;
+    background: rgb(64, 92, 128);
+    color: white;
+    text-align: center;
 }
 
 h1 {
-    font-size: 150%;
+    text-shadow: black +1px +1px 2px;
+    color: rgb(192, 128, 92);
+    font-size: 250%;
 }
 
-textarea {
-    font: 100% monospace;
-    width: 30em;
-    border: none;
-    height: 20em;
-    padding: 1em;
-}
+    h1 span {
+        color: rgb(255, 255, 192);
+    }
 
-.source {
+.input, .display, .output {
+    width: 36em;
+    height: 16em;
     padding: .5em;
-    margin: .5em;
+    margin: .5em auto;
+    display: block;
+    border: 1px solid;
     overflow: auto;
-    border-radius: 1em;
-    border: 1px solid #888;
-    background: #EEE;
+    text-align: left;
+    font: 100% monospace;
 }
 
-.source .value .property::before {
-    content: ".";
+.input, .output {
+    background: white;
+    color: black;
 }
 
-.source .expression {
-    clear: both;
+.output.error {
+    border-color: red;
+    background-color: #FEE;
 }
 
-.source .expressions {
-    position: relative;
-    padding: .25em;
-    border: 1px solid black;
-    border-radius: .5em;
+.display {
+    background: black;
+    color: white;
 }
-
-.source .operator {
-    font-weight: bold;
-    color: blue;
-    margin: 0 .5em;
-}
-
-.source .literal {
-    color: red;
-}
-
-.source .params {
-    background: rgba(0, 255, 0, .5);
-    padding: .125em;
-    border-radius: .25em; 
-}
-
-.source .args::before {
-    content: "(";
-}
-
-.source .args::after {
-    content: ")";
-}
-
-.source .args .arg + .arg::before {
-    content: ", ";
-}
-
+    
+    .display .op,
+    .display .args,
+    .display .call,
+    .display .literal,
+    .display .assign {
+        display: inline-block;
+        padding: .25em;
+        margin: .25em;
+        border-radius: .5em;
+    }
+    
+    .display .op {
+        border: 1px solid;
+        background: rgb(255, 128, 128);
+        color: black;
+    }
+    
+    .display .args {
+        background: rgb(255, 255, 128);
+        color: black;
+    }
+    
+    .display .call {
+        background: rgb(0, 128, 92);
+        
+    }
+    
+    .display .unknown {
+        color: red;
+        opacity: .75;
+    }
+    
+    .display .literal {
+        background: white;
+        min-width: 1em;
+        text-align: center;
+        color: black;
+        border: 1px solid;
+    }
