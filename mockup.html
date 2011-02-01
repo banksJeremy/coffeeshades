@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Hello World</title>
+        <style>
+.code {
+    font-family: monospace;
+    background-color: #333;
+    padding: 2em;
+}
+
+.call, .args, .assign, .id, .fun, .lit, .math {
+    padding: .25em;
+    display: inline-block;
+    border-radius: .5em;
+}
+
+.assign {
+    background: rgb(150, 255, 255);
+color: black;
+}
+
+.args {
+    background: rgb(255, 255, 128);
+}
+
+.body {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.fun {
+    background: rgb(74, 200, 74);background: #333;color: white;
+}
+
+.id, .lit {
+    background: white;
+    color: black;
+    min-width: 1em;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.call {
+    background: rgb(192, 64, 74);
+    color: white;
+}
+
+.math {
+    background: rgb(192, 0, 128);
+    color: white;
+}
+
+.lit {
+    color: blue;
+}
+
+textarea {
+    font: 100% monospace;
+}
+        </style>
+    </head>
+    <body>
+        <div class=code>
+            <span class=assign><span class=id>sumOfSquares</span>
+                ←
+            <span class=fun>
+                <span class=args><span class=id>x</span> <span class=id>y</span></span>
+                <span class=body>
+
+                    <span class=assign><span class=id>a</span>  ←
+                        <span class=math><span class=id>x</span> * <span class=id>x</span></span>
+                    </span><br><br>
+
+                    <span class=assign><span class=id>b</span>  ←
+                        <span class=math><span class=id>y</span> * <span class=id>y</span></span>
+                    </span> <br><br>
+
+                    <span class=assign>  ←
+                        <span class=math><span class=id>a</span> + <span class=id>b</span></span>
+                    </span>
+
+            </span>
+    </span></span></span>
+        <br /><br>
+            <span class=call><span class=id>print</span>
+                <span class=args><span class=call><span class=id>sumOfSquares</span>
+                        <span class=args><span class=lit>2</span> <span class=lit>5</span></span></span>
+            </span>
+        </span>
+    </div>
+    <pre>
+Subset of CoffeeScript?
+- Functions, no splats or defaults.
+- Calls, no splats
+- Assignment
+- No properties
+    </pre>
+    </body>
+</html>
+
